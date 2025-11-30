@@ -6,8 +6,6 @@ namespace University.Core.Models
 {
     public class CourseManagement
     {
-        private List<Course> _courses = new List<Course>();
-
         // добаить студента на курс
         public void EnrollStudent(int courseId, Student student)
         {
@@ -15,7 +13,7 @@ namespace University.Core.Models
 
             if (course == null)
             {
-                throw new ArgumentException($"курс с id {courseId} не найден");
+                throw new ArgumentException($"курса с id {courseId} не нашлось");
             }
             course.Students.Add(student);
         }
@@ -27,7 +25,6 @@ namespace University.Core.Models
                 .Where(c => c.Teacher != null && c.Teacher.Id == teacherId)
                 .ToList();
         }
-        private List<Course> _cources = new List<Course>();
 
         // добавление курсов
         public void AddCourse(Course course)
@@ -56,5 +53,6 @@ namespace University.Core.Models
                 course.Teacher = teacher;
             }
         }
+        private List<Course> _courses = new List<Course>();
     }
 }

@@ -8,7 +8,6 @@ namespace University.Core.Models
         public string Classroom { get; set; }
         public string Schedule { get; set; }
 
-        // конструктор
         public OfflineCourse(int id, string title, string classroom, string schedule) : base(id, title)
         {
             Classroom = classroom;

@@ -8,7 +8,6 @@ namespace University.Core.Models
         public string Platform { get; set; }
         public string Link { get; set; }
 
-        // конструктор
         public OnlineCourse(int id, string title, string platform, string link) : base(id, title)
         {
             Platform = platform;
