@@ -9,7 +9,7 @@ namespace University.Tests
         [Fact]
         public void StudentConstructor_Correct()
         {
-            int id = 123456;
+            uint id = 123456;
             string name = "Мильнюсов Зореслав Добрыниевич";
             byte year = 3;
             string specialization = "Языковые модели и искусственный интеллект";
@@ -27,7 +27,7 @@ namespace University.Tests
         {
             var student = new Student(135795, "Мошкин Тузик Аркадиевич", 1, "преподаватель");
 
-            Assert.Equal(135795, student.Id);
+            Assert.Equal(135795u, student.Id);
             Assert.Equal("Мошкин Тузик Аркадиевич", student.Name);
             Assert.Equal((byte)1, student.Year);
             Assert.Equal("преподаватель", student.Specialization);
@@ -44,7 +44,7 @@ namespace University.Tests
         [Fact]
         public void TeacherConstructor_Correct()
         {
-            int id = 929193;
+            uint id = 929193;
             string name = "Тоти Алессандро";
             string email = "alestoti@itmo.ru";
 
@@ -60,7 +60,7 @@ namespace University.Tests
         {
             var teacher = new Teacher(101010, "Хихи Хаха Хихиковна", "hihihaha@itmo.ru");
 
-            Assert.Equal(101010, teacher.Id);
+            Assert.Equal(101010u, teacher.Id);
             Assert.Equal("Хихи Хаха Хихиковна", teacher.Name);
             Assert.Equal("hihihaha@itmo.ru", teacher.Email);
 

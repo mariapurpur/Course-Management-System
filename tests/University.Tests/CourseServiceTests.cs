@@ -6,7 +6,7 @@ public class OnlineCourseTests
     [Fact]
     public void Constructor_Correct()
     {
-        int id = 123;
+        uint id = 123;
         string title = "основы c++";
         string platform = "Zoom";
         string link = "https://zoom.us/";
@@ -35,7 +35,7 @@ public class OfflineCourseTests
     [Fact]
     public void Constructor_Correct()
     {
-        int id = 789;
+        uint id = 789;
         string title = "математический анализ";
         string classroom = "ауд 205";
         string schedule = "ПН/СР 10:00-12:00";
@@ -60,8 +60,8 @@ public class OfflineCourseTests
     [Fact]
     public void Course_Correct()
     {
-        var courseId = 1;
-        var courseTitle = "тестовый базовый курс";
+        uint courseId = 1;
+        string courseTitle = "тестовый базовый курс";
 
         var course = new OnlineCourse(courseId, courseTitle, "LMS", "https://lms");
 
