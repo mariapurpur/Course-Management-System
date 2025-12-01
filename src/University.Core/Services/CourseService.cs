@@ -18,11 +18,8 @@ namespace University.Core.Services
             _courses.Add(course);
         }
 
-        public void RemoveCourse(int courseId)
+        public void RemoveCourse(uint courseId)
         {
-            if (courseId <= 0)
-                throw new ArgumentException("id не может быть отрицательным или нулевым :(", nameof(courseId));
-
             var courseToRemove = _courses.FirstOrDefault(c => c.Id == courseId);
             if (courseToRemove != null)
             {
@@ -30,10 +27,8 @@ namespace University.Core.Services
             }
         }
 
-        public void AssignTeacher(int courseId, Teacher teacher)
+        public void AssignTeacher(uint courseId, Teacher teacher)
         {
-            if (courseId <= 0)
-                throw new ArgumentException("id не может быть отрицательным или нулевым :(", nameof(courseId));
             if (teacher == null)
                 throw new ArgumentNullException(nameof(teacher));
 
@@ -44,10 +39,8 @@ namespace University.Core.Services
             }
         }
 
-        public void EnrollStudent(int courseId, Student student)
+        public void EnrollStudent(uint courseId, Student student)
         {
-            if (courseId <= 0)
-                throw new ArgumentException("id не может быть отрицательным или нулевым :(", nameof(courseId));
             if (student == null)
                 throw new ArgumentNullException(nameof(student));
 
@@ -58,9 +51,9 @@ namespace University.Core.Services
             course.Students.Add(student);
         }
 
-        public List<Course> GetCoursesByTeacher(int teacherId)
+        public List<Course> GetCoursesByTeacher(uint teacherId)
         {
-            if (teacherId <= 100000)
+            if (teacherId <= 100000 || teacherId >= 999999)
                 throw new ArgumentException("id должен соответствовать нормам ИСУ ИТМО :(", nameof(teacherId));
 
             return _courses

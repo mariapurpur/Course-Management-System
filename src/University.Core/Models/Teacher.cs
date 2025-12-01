@@ -5,11 +5,11 @@ namespace University.Core.Models
 {
     public class Teacher
     {
-        public int Id { get; set; }
+        public uint Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
 
-        public Teacher(int id, string name, string email)
+        public Teacher(uint id, string name, string email)
         {
             Id = id;
             Name = name;

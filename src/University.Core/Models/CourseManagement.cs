@@ -7,7 +7,7 @@ namespace University.Core.Models
     public class CourseManagement
     {
         // добаить студента на курс
-        public void EnrollStudent(int courseId, Student student)
+        public void EnrollStudent(uint courseId, Student student)
         {
             var course = _courses.FirstOrDefault(c => c.Id == courseId);
 
@@ -19,7 +19,7 @@ namespace University.Core.Models
         }
 
         // получить список курсов от конкретного препода
-        public List<Course> GetCoursesByTeacher(int teacherId)
+        public List<Course> GetCoursesByTeacher(uint teacherId)
         {
             return _courses
                 .Where(c => c.Teacher != null && c.Teacher.Id == teacherId)
@@ -34,7 +34,7 @@ namespace University.Core.Models
 
 
         // удаление курса по его id
-        public void RemoveCourse(int courseId)
+        public void RemoveCourse(uint courseId)
         {
             var course = _courses.FirstOrDefault(c => c.Id == courseId);
             if (course != null)
@@ -45,7 +45,7 @@ namespace University.Core.Models
 
 
         // назначение преподавателя на курс по id курса
-        public void AssignTeacher(int courseId, Teacher teacher)
+        public void AssignTeacher(uint courseId, Teacher teacher)
         {
             var course = _courses.FirstOrDefault(c => c.Id == courseId);
             if (course != null)

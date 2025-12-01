@@ -18,9 +18,9 @@ namespace University.Core.Services
             _teachers.Add(teacher);
         }
 
-        public void RemoveTeacher(int teacherId)
+        public void RemoveTeacher(uint teacherId)
         {
-            if (teacherId <= 100000)
+            if (teacherId <= 100000 || teacherId >= 999999)
                 throw new ArgumentException("id должен соответствовать нормам ИСУ ИТМО :(", nameof(teacherId));
 
             var teacherToRemove = _teachers.FirstOrDefault(t => t.Id == teacherId);
@@ -30,9 +30,9 @@ namespace University.Core.Services
             }
         }
 
-        public Teacher GetTeacher(int teacherId)
+        public Teacher GetTeacher(uint teacherId)
         {
-            if (teacherId <= 100000)
+            if (teacherId <= 100000 || teacherId >= 999999)
                 throw new ArgumentException("id должен соответствовать нормам ИСУ ИТМО :(", nameof(teacherId));
 
             var teacher = _teachers.FirstOrDefault(t => t.Id == teacherId);

@@ -55,11 +55,11 @@ class Program
         Console.WriteLine($"на заочный курс {onlineCourse.Title} теперь записаны: {string.Join(", ", onlineCourse.Students.Select(s => s.Name))}");
         Console.WriteLine($"на очный курс {offlineCourse.Title} теперь записаны: {string.Join(", ", offlineCourse.Students.Select(s => s.Name))}");
 
-        Console.WriteLine("\n+ получим курс, который ведёт Хихи Хаха Хихиковна:");
+        Console.WriteLine("\nполучим курс, который ведёт Хихи Хаха Хихиковна:");
         var coursesByTeacher1 = courseService.GetCoursesByTeacher(teacher1.Id);
         Console.WriteLine($"{string.Join(", ", coursesByTeacher1.Select(c => c.Title))}");
 
-        Console.WriteLine("\n+ немного похимичим с курасми и их участниками!");
+        Console.WriteLine("\nнемного похимичим с курасми и их участниками!");
         var foundStudent = studentService.GetStudent(579215);
         Console.WriteLine($"ого, студент с ИСУ 579215 - {foundStudent?.Name ?? "не найден :("}");
 
@@ -68,7 +68,7 @@ class Program
 
         Console.WriteLine($"надвигается сокращение! сейчас курсов от {teacher2.Name} {courseService.GetCoursesByTeacher(teacher2.Id).Count} шт.");
         courseService.RemoveCourse(2);
-        Console.WriteLine($"курс под номером 2 попал по дгорячую руку, теперь курсов осталось {courseService.GetCoursesByTeacher(teacher2.Id).Count} шт.");
+        Console.WriteLine($"курс под номером 2 попал под горячую руку, теперь курсов осталось {courseService.GetCoursesByTeacher(teacher2.Id).Count} шт.");
 
         var coursesByTeacher2 = courseService.GetCoursesByTeacher(teacher2.Id);
         Console.WriteLine($"после сокращения преподаватель {teacher2.Name} не ведёт ни одного курса :(");

@@ -6,9 +6,9 @@ namespace University.Core.Interfaces
     public interface ICourseService
     {
         void AddCourse(Course course);
-        void RemoveCourse(int courseId);
-        void AssignTeacher(int courseId, Teacher teacher);
-        void EnrollStudent(int courseId, Student student);
-        List<Course> GetCoursesByTeacher(int teacherId);
+        void RemoveCourse(uint courseId);
+        void AssignTeacher(uint courseId, Teacher teacher);
+        void EnrollStudent(uint courseId, Student student);
+        List<Course> GetCoursesByTeacher(uint teacherId);
     }
 }
